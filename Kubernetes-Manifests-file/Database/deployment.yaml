@@ -39,8 +39,12 @@ spec:
                 key: password
         volumeMounts:
           - name: mongo-volume
-            mountPath: /data/db
+            mountPath: /data/db           #The mountPath specified in the container configuration refers to the location within the container's filesystem 
       volumes: 
       - name: mongo-volume
         persistentVolumeClaim:
           claimName: mongo-volume-claim
+
+          #for that u need not create ebs when u create pvc.yaml
+          #In Kubernetes, when you define a PersistentVolumeClaim (PVC) with specific storage requirements (such as size and access mode), the responsibility of provisioning the actual storage volume falls on the underlying storage provider,
+          # not on the user or the Kubernetes cluster administrator.
