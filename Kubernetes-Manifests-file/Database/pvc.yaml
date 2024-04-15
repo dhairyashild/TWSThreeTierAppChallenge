@@ -9,4 +9,4 @@ spec:
   storageClassName: ""
   resources:
     requests:
-      storage: 1Gi
+      storage: 1Gi             #Yes, in Kubernetes, when you create a PersistentVolumeClaim (PVC) like the one you've described, you typically do not need to create a PersistentVolume (PV) separately
